@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        #hero{
+            background-image: url("https://www.link-academy.com/cms/mestoZaUploadFajlove/AI-and-Python-main-banner.png");
+            height: 50vh;
+        }
+    </style>
+</head>
+<body>
+        <div id="hero"></div>
+        <script>
+        var div =  document.getElementById("hero")
+            var images = ["https://www.link-academy.com/cms/mestoZaUploadFajlove/AI-and-Python-main-banner.png",
+            "https://www.link-academy.com/cms/mestoZaUploadFajlove/predlog-1_03.jpg",
+            "https://www.link-academy.com/cms/mestoZaUploadFajlove/predlog-1_05.jpg",
+            "https://www.link-academy.com/cms/mestoZaUploadFajlove/12.jpg",
+            "https://www.link-academy.com/cms/mestoZaUploadFajlove/programming-baner.png",
+            "https://www.link-academy.com/cms/mestoZaUploadFajlove/ai-python.jpeg"    
+        ]
+
+        contor = 0;
+        function schimba_poza_inainte() {
+                contor++; 
+                if (contor === images.length) {
+                        contor = 0;
+                }
+                div.style.backgroundImage = 'url("' + images[contor] + '")';
+            }
+
+        setInterval(schimba_poza_inainte, 1000)
+
+    </script>
+
+</body>
+</html>
