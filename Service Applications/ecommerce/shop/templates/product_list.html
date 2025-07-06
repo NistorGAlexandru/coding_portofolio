@@ -1,0 +1,43 @@
+
+
+{% extends "blog/base.html" %}
+
+
+{% block head %}
+{% if category %}
+    <title>{{category}}</title>
+{% else %}
+    <title>Product List</title>
+{% endif %}
+
+
+{% endblock head %}
+
+
+{% block main %}
+
+{% if category %}
+    <h1>{{category}}</h1>
+{% else %}
+    <h1> Lista de produse </h1>
+{% endif %}
+
+
+    
+<ol>
+    {% for p in products  %}
+        <a href="{{p.slug}}" >
+            <li> {{ p.name }} {{p.price}} </li>
+        </a>
+       
+    {% endfor %}
+</ol>
+
+{% endblock main %}
+
+
+
+
+
+ 
+  

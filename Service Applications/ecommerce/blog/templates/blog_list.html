@@ -1,0 +1,30 @@
+
+{% extends "blog/base.html" %}
+
+
+{% block head %}
+    
+{% endblock head %}
+
+
+{% block main %}
+
+<h1> Acesta este blogul... </h1>
+
+{% for blog in blogs  %}
+
+    <a href={{ blog.slug }}>
+        <h2> {{ blog.title }}</h2>
+    </a>
+
+    
+
+{% endfor %}
+
+
+<h1> Aveti {{count}} produse </h1>
+
+
+
+{% endblock main %}
+

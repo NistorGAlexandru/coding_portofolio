@@ -1,0 +1,48 @@
+
+
+{% extends "blog/base.html" %}
+
+
+{% block head %}
+    
+{% endblock head %}
+
+
+{% block main %}
+
+<h1> Aici va fi cartul nostru </h1>
+<ol>
+
+
+{% for prod, quantity, price in products  %}
+   <li>
+      <p> {{prod}}  </p>    
+      <p> {{prod.price}} lei  </p>      
+      <p> {{quantity}} buc </p>  
+
+      <form action={% url 'remove_product_url' prod.id  %} method="post">
+           {% csrf_token %}
+           
+          <input type="submit" value="X">
+      </form>
+      
+   </li> 
+
+{% endfor %}
+</ol>
+
+<p> De plata {{total}} </p>
+
+
+<form action={% url 'clear_cart_url' %} method="post">
+  {% csrf_token %}
+    <input type="submit" value="Goleste cosul">
+</form>
+
+{% endblock main %}
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block head %}
+    
+    {% endblock head %}
+    <style>
+        #qty{
+            background-color: red;
+            color:white;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+  
+</head>
+<body>
+
+    <header>
+    <nav>
+        <a href={% url 'home_blog' %}>Blog</a>
+        <a href={% url 'cart_view_url' %}>Cos </a>
+        {% if count %}
+            <span id="qty">{{count}}</span> 
+        {% endif %}
+       
+        <a href={% url 'all_products_url' %}>Produse</a>
+    </nav>
+
+    </header>
+
+
+    {% block main %}
+    
+    {% endblock main %}
+
+    <footer></footer>
+
+</body>
+</html>

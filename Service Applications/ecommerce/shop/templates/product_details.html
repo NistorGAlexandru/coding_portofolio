@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>Aici va fi product details</h1>
+
+<h2> {{product.name}} </h2>
+<p> {{product.description}} </p>
+<p> {{product.price}} </p>
+
+{% if product.image %}
+    <img src={{product.image.url}} alt="">
+{% else %}
+    <p> Nu exista imagine </p>
+{% endif %}
+
+
+
+<form action={% url 'add_to_cart_url' product.id %} method="post">
+
+    {{ form }}
+    {% csrf_token %}
+    
+    <input type="submit" value="Adauga in cos">
+
+</form>
+
+
+</body>
+</html>
