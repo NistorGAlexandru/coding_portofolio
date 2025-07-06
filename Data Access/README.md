@@ -12,16 +12,11 @@ Django applications and scripts focused on database interaction, modeling, and q
 
 ## ⚙️ Setup & Usage
 
-1. Create a virtual environment and activate it:
-   ```bash
-   python3 -m venv venv && source venv/bin/activate
-
-
-2. Install requirements:
+1. Install requirements:
    ```bash
    pip install django
 
-3. Run the server in either subfolder:
+2. Run the server in either subfolder:
    ```bash
    cd Data\ Access/algoritmica
    python manage.py migrate
