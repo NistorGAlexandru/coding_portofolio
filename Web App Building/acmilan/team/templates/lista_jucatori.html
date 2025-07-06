@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% for jucator in nume_jucatori  %}
+
+        <p>{{jucator}}</p>
+
+    {% endfor %}
+    
+    {% if  cea_mai_buna %}
+        <p>Adevarat</p>
+    {% else %}
+         <p>Fals</p>
+    {% endif %}
+   
+   {% for linie in jucatori  %}
+    <h1> {{linie}} </h1>
+        {% for jucator in linie %}
+                <p> {{jucator}} </p>
+                <h3> {{jucator.0}}</h3>
+                <h5> {{jucator.1}}</h5>
+        {% endfor %}
+
+
+   {% endfor %}
+
+</body>
+</html>
