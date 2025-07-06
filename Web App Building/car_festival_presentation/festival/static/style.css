@@ -1,0 +1,37 @@
+
+#logo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: url(download.jpeg);
+    background-size: cover;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: crimson;
+    padding: 5px;
+    box-sizing: border-box;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 0 5px;
+}
+nav a:hover{
+    color: black;
+}
+.active{
+    color: black;
+}
+h1{
+    color: white;
+}
+p{
+    color: white;
+    text-shadow: 0 1px black;
+    background: #333;
+    background: rgba(0, 0, 0, 0.18);
+    padding: 4px 8px;
+}

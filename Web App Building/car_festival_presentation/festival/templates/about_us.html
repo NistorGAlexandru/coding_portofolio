@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Acasa</title>
+<link rel="stylesheet" href= "{% static 'home_style.css' %}" type="text/css">
+
+{% endblock title %}
+
+
+{% block structura %}
+
+<div id="hero" style="background-image: url('{% static 'background_image.jpeg' %}')">
+    <h1> Alex </h1>
+    <p> Soon to be going home </p>
+</div>
+
+
+
+{% endblock structura %}

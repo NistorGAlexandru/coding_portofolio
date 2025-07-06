@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Acasa</title>
+    <link rel="stylesheet" href= "{% static 'home_style.css' %}" type="text/css">
+
+{% endblock title %}
+
+
+{% block structura %}
+ 
+
+<div id="hero" style='background-image: url("{% static 'background_image.jpeg' %}");'>
+
+    <h1>Low N’ Slow Summer Fest</h1>
+    <p>Festivalul maşinilor tunate, la Moineşti</p>
+</div>
+
+
+
+<script>
+    var text = 'Low N’ Slow Summer Fest'
+    var h1 = document.getElementsByTagName('h1')[0]
+    var count = 1
+
+    function show_letter() {
+        h1.innerHTML = text.slice(0, count)
+        count += 1
+        if (count == text.length){
+            count = 1
+        }
+    }
+    setInterval(show_letter, 1200);
+
+</script>
+
+
+{% endblock structura %}

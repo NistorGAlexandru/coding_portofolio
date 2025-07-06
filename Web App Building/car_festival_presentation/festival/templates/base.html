@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href= "{% static 'style.css' %}" type="text/css">
+    {% block title %}
+        <title>Document</title>
+    {% endblock title %}
+</head>
+<body>
+
+<header> 
+    <div id="logo" style="background-image: url('{% static 'download.jpeg' %}');"></div>
+    <nav>
+
+        <a href={% url 'home' %} 
+       {% if request.resolver_match.url_name  == 'home' %}
+            class="active"
+       {% endif %}
+
+        >Acasa</a>
+        <a href={% url 'about_us' %}
+        {% if request.resolver_match.url_name  == 'about_us' %}class="active"{% endif %}
+        >Despre noi</a>
+        <a href={% url 'last_year' %}
+        {% if request.resolver_match.url_name  == 'last_year' %}class="active"{% endif %}
+        >Editia trecuta</a>
+        <a href={% url 'contact' %}
+        {% if request.resolver_match.url_name  == 'contact' %}class="active"{% endif %}
+        >Contact</a>
+
+    </nav>
+</header>
+
+{% block structura %}
+{% endblock structura %}
+    
+</body>
+</html>
+
+
