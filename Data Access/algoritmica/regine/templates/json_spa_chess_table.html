@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #board{
+            background-color: aqua;
+            height: min(80vh, 80vw);
+            width: min(80vh, 80vw);
+            display: grid;
+            grid-template-columns: repeat({{N}}, 1fr);
+            grid-template-rows: repeat({{N}}, 1fr);
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+        }
+        .square{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-color: black;
+            {% comment %} border-width: 1px; {% endcomment %}
+            border-style: solid;
+        }
+        .square.black{
+            background-color: black;
+            color:white;
+        }
+        .square.moccasin{
+            background-color: moccasin;
+            color:black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> Tabla de sah {{prima_solutie}} </h1>
+
+    <section id="board">
+
+        {% for i in range_N %}
+             {% for j in range_N %}
+            <div class="square  {% if  i|add:j|divisibleby:2 %} black {% else %} moccasin  {% endif %}">
+                 {% comment %} i = {{i}} j = {{j}} {% endcomment %}
+                    {% for sol in prima_solutie %}
+                        {% if sol == j|add:1 and forloop.counter == i|add:1  %}
+                           Regina
+                        {% endif %}
+                    {% endfor %}
+            </div>  
+            {% endfor %}
+        {% endfor %}    
+
+        <button onclick="next_solution(-1)">Sectiunea precendenta</button>
+        <button onclick="next_solution(1)">Urmatoarea sectiune</button>
+    </section>
+
+    <script>
+        var solutii;
+        var request = new XMLHttpRequest();
+        var index_solutie = 0
+        var N = {{N}}
+
+        request.onreadystatechange = function () {
+            if (this.status == 200 && this.readyState == 4) {
+                JSON.parse(this.responseText)
+            }
+        }
+        request.open("GET", url, true)
+        request.send();
+
+
+        function next_solution(step) {
+                var squares = document.getElementsByClassName(square)
+            for (let i = 0; i < squares.length; i++) {
+                const element = squares[i];
+                element.innerHTML = ""
+                
+            }
+            index_solutie += 1
+            if (index_solutie == solutii.length) {
+                index_solutie = 0
+            }
+            if (index_solutie == -1) {
+                index_solutie = solutii.length - 1
+            }
+            solutie_curenta = solutii[index_solutie]
+
+            for (let i = 0; i < squares.length; i++) {
+                const element = squares[i];
+                element.innerHTML = ""
+                i = Math.floor(i / 4);
+                val = i % 4
+
+                if (solutie_curenta[index] == val + 1) {
+                    element.innerHTML = 'Regina'
+                }
+                
+            }
+        }
+    </script>
+
+</body>
+</html>

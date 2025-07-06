@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        #board{
+            background-color: aqua;
+            height: min(80vh, 80vw);
+            width: min(80vh, 80vw);
+            display: grid;
+            grid-template-columns: repeat({{N}}, 1fr);
+            grid-template-rows: repeat({{N}}, 1fr);
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+        }
+        .square{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-color: black;
+            {% comment %} border-width: 1px; {% endcomment %}
+            border-style: solid;
+        }
+        .square.black{
+            background-color: black;
+            color:white;
+        }
+        .square.moccasin{
+            background-color: moccasin;
+            color:black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> Tabla de sah {{prima_solutie}} </h1>
+
+    <section id="board">
+
+        {% for i in range_N %}
+             {% for j in range_N %}
+            <div class="square  {% if  i|add:j|divisibleby:2 %} black {% else %} moccasin  {% endif %}">
+                 {% comment %} i = {{i}} j = {{j}} {% endcomment %}
+                    {% for sol in prima_solutie %}
+                        {% if sol == j|add:1 and forloop.counter == i|add:1  %}
+                           Regina
+                        {% endif %}
+                    {% endfor %}
+            </div>  
+            {% endfor %}
+        {% endfor %}    
+
+        {% if sol_no > 0 %}
+            <a href="{% url 'chess_table_url_with_sol_no' N sol_no|add:'-1' %}">  Solutie precedenta</a>   
+        {% else %}
+             <a href="{% url 'chess_table_url_with_sol_no' N len_solutii|add:'-1' %}">  Solutie precedenta</a> 
+        {% endif %}
+  
+
+        <a href="{% url 'chess_table_url_with_sol_no' N sol_no|add:1 %}"> Urmatoarea solutie</a>
+
+
+        {% comment %} {% for i in range_N %}
+            {% for j in range_N %}
+                {% if j|divisibleby:2 %}
+                    {% if i|divisibleby:2 %}
+                        <div class="square black"> {{i}} 
+                       
+                            
+
+
+                        </div>
+                    {% else %}
+                         <div class="square moccasin"> {{i}}  </div>
+                    {% endif %}
+                {% else %}
+                    {% if i|divisibleby:2 %}
+                         <div class="square moccasin"> {{i}}  </div>
+                    {% else %}
+                        <div class="square black"> {{i}} </div>
+                    {% endif %}
+                {% endif %}
+                
+            {% endfor %}
+        {% endfor %}     {% endcomment %}
+
+
+
+
+    {% comment %} 
+      {% for i in  range_N_p %}
+             {% if i|divisibleby:2 %}
+               
+                <div class="square black">
+                    {{i}}
+
+                    {% if i in prima_solutie_shiftata %}
+                        XXXX
+                    {% endif %}
+             
+                </div>
+
+            {% else %}
+
+                <div class="square moccasin"> {{i}}
+                    {% if i in prima_solutie_shiftata %}
+                    XXXX
+                    {% endif %}    
+                
+                </div>
+            {% endif %}
+        {% endfor %}  {% endcomment %}
+
+
+
+            {% comment %} {% for i in  range_N_p %}
+              <div class="square  {% if i|divisibleby:2 %} black {% else %} moccasin  {% endif %}">
+                {% if i in prima_solutie_shiftata %}
+                XXXX
+                {% endif %}  
+              </div>  
+            {% endfor %}    {% endcomment %}
+
+
+
+
+    </section>
+
+
+</body>
+</html>
