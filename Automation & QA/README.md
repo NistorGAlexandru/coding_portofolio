@@ -1,7 +1,7 @@
 ---
+
 ### 1. Automation & QA/README.md
 
-```markdown
 # Automation & QA
 
 This folder contains Python scripts and Selenium-based tests aimed at automating workflows and validating software quality.
@@ -20,4 +20,3 @@ This folder contains Python scripts and Selenium-based tests aimed at automating
 1. Install dependencies:
    ```bash
    pip install selenium requests
----
