@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:green;
+        }
+        .bordered{
+            border:solid;
+            border-color: white;
+            border-width: 2px;
+        }
+        #terenmare{
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .teren{
+            position:absolute;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+            width: 50%;
+            height: 100%;
+            left:0;
+            border-width: 1px;
+
+        }
+        #cerccentru{
+             height: 25vw;
+             width: 25vw; 
+             border-radius: 25vh; 
+        }
+        .dreapta{
+            left:50%;
+            right:0;
+            border-color: white;
+        }
+        .careu{
+            height: 34%;
+            width: 34%;
+            left:0;
+            display: flex;
+            align-items: center;
+            justify-content:flex-start;
+        }
+        .dreapta > .careu{
+            display: flex;
+            align-items: center;
+            justify-content:flex-end;
+        }
+        .careumic{
+            position: absolute;
+            border-color: white;
+            /* left:0; */
+            height: 18%;
+            width: 10%;
+        }
+        .dreapta{
+            justify-content:flex-end;
+        }
+        .corner{
+            width: 2%;
+            height: 2%;
+            position: absolute;
+            border-color: aqua;
+
+    
+        }
+        .topleft{
+            left: 0;
+            top:0;
+            border-bottom-right-radius: 50px;
+            border-top: 0;
+            border-left: 0;
+        }
+        .topright{
+            right: 0;
+            top:0;
+            border-bottom-left-radius: 50px;
+            border-top: 0;
+            border-right: 0;
+        }
+        .bottomleft{
+            left: 0;
+            bottom:0;
+            border-top-right-radius: 50px;
+            border-bottom: 0;
+            border-left: 0;
+        }
+        .bottomright{
+            right: 0;
+            bottom:0;
+            border-top-left-radius: 50px;
+            border-bottom: 0;
+            border-right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="terenmare" class="bordered">
+        <div class="corner bordered topleft"></div>
+        <div class="corner bordered topright"></div>
+        <div class="corner bordered bottomleft"></div>
+        <div class="corner bordered bottomright"></div>
+
+        <div class="teren bordered">
+            <div class="careu bordered">
+                <div class="careumic bordered">
+
+                </div>
+            </div>
+        </div>
+        <div id="cerccentru" class="bordered"> </div>
+        <div class="teren bordered dreapta"> 
+            <div class="careu bordered">
+                <div class="careumic bordered">
+
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+</body>
+</html>

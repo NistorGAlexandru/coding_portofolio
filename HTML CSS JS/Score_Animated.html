@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: whitesmoke;
+        }
+        #tabela{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .backgroundsteag{
+            width: 200px;
+            height: 200px;
+            background-color:bisque;
+            border-style: solid;
+            border-radius: 20px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .numetara{
+            color:black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        @keyframes rotire{
+         from {
+                transform:rotate(90deg);
+        }
+         to{
+            transform:rotate(360deg);
+        }
+        }
+
+        #romania {
+            transform: scale(1, 1);
+            transition: 1s;
+            animation: rotire;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            animation-iteration-count: 2;
+        }
+        #romania:hover {
+            transform: rotate(180deg);
+            /* transform: scale(0.5, 1); */
+            transform: scaleY(0.5);
+            transition-duration: 5s;
+            /* transition-delay: 2s; */
+            transition-timing-function: linear;
+        }
+        #romania, #argentina{
+            min-width: 70%;
+            min-height: 50%;
+            display:flex;
+            align-items: stretch;
+            justify-content: center;
+        }
+      
+
+        .culoare {
+            min-width: 33%;
+            background-color: red;
+        }
+        #argentina{
+            background-color: white;
+            /* flex-direction: column; */
+            transform: rotate(90deg);
+            min-width: 50%;
+            min-height: 70%;
+        }
+      
+        .culoare:nth-child(1){
+            background-color: blue;
+        }
+        .culoare:nth-child(2){
+            background-color: yellow;
+        }
+        #argentina, #romania{
+            border:1px;
+            border-color: rgba(128, 128, 128, 0.208);
+            border-style: solid;
+        }
+     
+        #argentina .culoare:nth-child(1){
+            background-color: aqua;
+            /* height: 100px; */
+            width: 100%;
+        }
+
+        #argentina .culoare:nth-child(2){
+            background-color: white;
+            height: 100%;
+            width: 100%;
+        }
+        #argentina .culoare:nth-child(3){
+            background-color: aqua;
+            /* height: 100px; */
+            width: 100%;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="tabela">
+        <div id="gazde">
+            <div class="backgroundsteag">
+                <div id="romania">
+                    <div class="culoare"> 
+                        
+                    </div>
+                    <div class="culoare"> 
+                    
+                    </div>
+                    <div class="culoare">
+                        
+                    </div>
+                </div>
+               
+            </div>
+            <b class="numetara">România</b>
+        </div>
+
+        <div id="detaliiscor">
+            <div><b>3-2</b></div>
+        </div>
+
+        <div id="oaspeti">
+            <div class="backgroundsteag">
+                <div id="argentina">
+                   
+                    <div class="culoare"> 
+                        
+                    </div>
+                    <div class="culoare"> 
+                       
+                    </div>
+                    <div class="culoare">
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <b class="numetara">Argentina</b>
+        </div>
+
+    </div>    
+</body>
+</html>

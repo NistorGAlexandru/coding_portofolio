@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            height: 100vh;
+            width: 100vw;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .om{
+            background-image: url("face1.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 80%;
+            width: 15%;
+            border-radius: 60px;
+            margin: 20px;
+            transition-duration: 2s;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding-left: 30px;
+        }
+        .om:hover{
+            width: 50%;
+            transition-duration: 2s;
+        }
+        p{
+            color:white;
+            font-size: 0px;
+            /* display: none; */
+            /* visibility: hidden; */
+        }
+        .om:hover p{
+            display:flex;
+            /* visibility:visible; */
+            font-size: 32px;
+            transition-duration: 2s;
+        }
+        .om:nth-child(2){
+            background-image: url("face2.jpg");
+        }
+        .om:nth-child(3){
+            background-image: url("face3.jpg");
+        }
+        .om:nth-child(4){
+            background-image: url("face4.jpg");
+        }
+        .om:nth-child(5){
+            background-image: url("face5.jpg");
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="om"><p>Ion Ionescu</p></div>
+        <div class="om"><p>Pon Ponescu</p></div>
+        <div class="om"><p>Ron Ronescu</p></div>
+        <div class="om"><p>Ton Tonescu</p></div>
+        <div class="om"><p>Don Donescu</p></div>
+    </main>
+    
+</body>
+</html>

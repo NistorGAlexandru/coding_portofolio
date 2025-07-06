@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        margin: 0;
+    }
+    main{
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+    }
+    #participare{
+        background-color: blue;
+        background-image:url(image1.jpg);
+    }
+    #sponsorizare{
+        background-color: black;
+        background-image: url(image2.jpeg);
+    }
+
+    .parte{
+        background-size: cover;
+        position: relative;
+        height: 100%;
+        width: 50%;
+        transition-duration: 1.5s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .parte:hover{
+        width: 75%;
+        transition-duration: 1.5s;
+    }
+    h1{
+        color:white;
+        font-size: 65px;
+        z-index: 2;
+    }
+    button{
+        background-color: transparent;
+        color:white;
+        border-color: white;
+        padding:30px;
+        border-width: 2px;
+        font-size: 25px;
+        z-index: 2;
+    }
+    button:hover{
+        background-color:yellow;
+        border-color: transparent;
+
+    }
+    #sponsorizare  button:hover{
+        background-color:blue;
+    }
+    #participare  button:hover{
+        color:black;
+    }
+    .backcolor{
+        height: 100%;
+        width: 100%;
+        background-color:rgba(0, 0, 255, 0.4);
+        position: absolute;
+    }
+    #sponsorizare .backcolor{
+        background-color:rgba(0, 0, 0, 0.4);
+    }
+
+    </style>
+</head>
+<body>
+
+    <main>
+        
+        <div id="participare" class="parte">
+             <div class="backcolor"></div>
+                <h1>I want to participate</h1>
+                <button>CONTACT US</button>
+            
+           
+        </div>
+        <div id="sponsorizare" class="parte">
+            <div class="backcolor"></div>
+            <h1>I want to be a sponsor</h1>
+            <button>CONTACT US</button>
+        </div>
+
+    </main>
+
+    
+</body>
+</html>
