@@ -20,3 +20,9 @@ This folder contains Python scripts and Selenium-based tests aimed at automating
 1. Install dependencies:
    ```bash
    pip install selenium requests
+   
+2. To run tests:
+   ```bash
+   python test_access_with_selenium.py
+
+3. Browse the ClubAccessProject/ folder for more advanced Selenium examples.
