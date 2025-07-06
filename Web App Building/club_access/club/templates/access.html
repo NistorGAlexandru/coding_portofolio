@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Testing...</h1>
+
+    <form action={% url 'rezultat' %} method="post">
+    {% csrf_token %}
+        
+        <input type="date" name="birthday" id="">
+        <select name="sex" id="">
+            <option value="m">Masculin</option>
+            <option value="f">Feminin</option>
+        </select>
+        <input type="radio" name="gender" id="" value="m">
+        <label for="">Masculin</label>
+
+        <input type="radio" name="gender" id="" value="f">
+        <label for="">Feminin</label>
+        <input type="submit" value="Verifica">
+    </form>
+    
+</body>
+</html>
