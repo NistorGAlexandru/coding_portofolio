@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+
+        <a href={% url 'home_blog' %}>Blog</a>
+        <a href={% url 'cart_view_url' %}>Cos</a>
+        <a href={% url 'all_products_url' %}>Produse</a>
+    </nav>
+    
+    <h1> Aici va fi cartul nostru </h1>
+    <ol>
+
+   
+    {% for prod, quantity, price in products  %}
+       <li>
+          <p> {{prod}}  </p>    
+          <p> {{prod.price}} lei  </p>      
+          <p> {{quantity}} buc </p>  
+       </li> 
+
+    {% endfor %}
+    </ol>
+
+    <p> De plata {{total}} </p>
+
+</body>
+</html>

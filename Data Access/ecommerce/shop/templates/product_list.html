@@ -1,0 +1,31 @@
+
+
+{% extends "blog/base.html" %}
+
+
+{% block head %}
+<title>Product List</title>
+{% endblock head %}
+
+
+{% block main %}
+
+<h1> Lista de produse </h1>
+    
+<ol>
+    {% for p in products  %}
+        <a href="{{p.slug}}" >
+            <li> {{ p.name }} {{p.price}} </li>
+        </a>
+       
+    {% endfor %}
+</ol>
+
+{% endblock main %}
+
+
+
+
+
+ 
+  
