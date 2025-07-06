@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p, span {
+            background-color: antiquewhite;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- <input type="checkbox" name="" id="" onchange="alert('se schimba')"> -->
+
+    <input type="text">
+    <div class="list"></div>
+    <button onclick="adaugare()"> Insereaza </button>
+
+    <script>
+
+    var input = document.getElementsByTagName("input")[0]
+    var list_div = document.getElementsByClassName("list")[0]
+    
+    function adaugare(){
+
+        if (input.value.length > 1) {
+
+
+            var element_div = document.createElement("div")
+            list_div.appendChild(element_div)
+
+            var check_box = document.createElement("input")
+            check_box.type = "checkbox"
+
+            element_div.appendChild(check_box)
+
+            check_box.onchange = function () {
+                alert("A fost chemat checkboxul ", this)
+                console.log(this)
+
+                var p_vecin =  this.nextSibling;
+                console.log(p_vecin)
+                p_vecin.style.backgroundColor = "green";
+            }
+
+
+            var p_elem =   document.createElement("p")
+            p_elem.innerHTML = input.value
+            element_div.appendChild(p_elem)
+
+            input.value = ""
+
+
+        }else {
+            alert("Completeaza...")
+        }
+    }
+
+    
+    </script>
+
+</body>
+</html>
