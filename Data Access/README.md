@@ -1,7 +1,6 @@
 ---
 ### 2. Data Access/README.md
 
-```markdown
 # Data Access
 
 Django applications and scripts focused on database interaction, modeling, and query optimization.
