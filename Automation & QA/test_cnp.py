@@ -1,4 +1,4 @@
-# https://dontpad.com/cnptestare
+
 
 from cnp import este_valid
 ## TDD -> TEST DRIVEN DEVELOPMENT
