@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hero{
+            background-image: url("https://www.link-academy.com/cms/mestoZaUploadFajlove/AI-and-Python-main-banner.png");
+            height: 50vh;
+        }
+        #color {
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="hero"></div>
+    <button onclick="schimba_poza()">Next</button>
+
+    <button >Next fara atribut</button>
+    <button >Next cu functie anonima</button>
+    <button >Next cu event listener</button>
+    <div id="color"></div>
+
+    <script>
+
+        function schimba_poza() {
+            console.log("A fost apasat butonul!!!")
+            document.getElementById("color").style.backgroundColor = "red"
+            document.getElementById("hero").style.backgroundImage =  'url("https://www.link-academy.com/cms/mestoZaUploadFajlove/predlog-1_03.jpg")'
+        }
+
+        var al_doilea_buton = document.getElementsByTagName("button")[1]
+        console.log(al_doilea_buton)
+
+        al_doilea_buton.onclick = schimba_poza
+
+
+        var al_treilea_buton = document.getElementsByTagName("button")[2]
+        al_treilea_buton.onclick = function () {
+            console.log("A fost apasat butonul!!!")
+            document.getElementById("color").style.backgroundColor = "black"
+        }
+
+        var al_patrulea_buton = document.getElementsByTagName("button")[3]
+        al_patrulea_buton.addEventListener("click", function (params) {
+            document.getElementById("color").style.backgroundColor = "green"
+        })
+
+
+    </script>
+
+</body>
+</html>

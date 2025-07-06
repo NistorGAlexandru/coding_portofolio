@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearInterval(timer)">Stop</button>
+
+
+    <script>
+        function do_something(){
+            console.log("Functia a fost chemata")
+        }
+        // setTimeout(do_something, 5000)
+        var timer = setInterval(do_something, 2000)
+
+    </script>
+</body>
+</html>
