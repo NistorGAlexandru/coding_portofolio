@@ -1,4 +1,3 @@
-# https://dontpad.com/cnptestare2
 
 from datetime import datetime, date
 from an_bisect import este_bisect
