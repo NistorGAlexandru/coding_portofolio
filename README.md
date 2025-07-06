@@ -10,7 +10,6 @@ Welcome! I’m Alex, a passionate software developer with a diverse background s
 - **HTML CSS JS** — Interactive web pages and animations built with vanilla web technologies.  
 - **Mini Projects** — Small one-off scripts and games demonstrating algorithmic and Python skills.  
 - **MySQL** — SQL scripts and database designs illustrating relational database proficiency.  
-- **OOP** — Object-oriented programming exercises and examples in Python.  
 - **Python Networking** — API clients and network-based scripts leveraging HTTP requests.  
 - **Service Applications** — Micro-projects providing small utilities and service frameworks in Python.  
 - **Web App Building** — Full-stack web applications using Django and JavaScript.
