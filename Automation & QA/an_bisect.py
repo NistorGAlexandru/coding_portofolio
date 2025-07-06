@@ -1,4 +1,3 @@
-#https://dontpad.com/cnptestare3
 
 def este_bisect(an):
     ## Version 1
